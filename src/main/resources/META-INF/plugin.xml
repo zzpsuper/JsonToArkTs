@@ -1,0 +1,49 @@
+<idea-plugin>
+    <id>com.peiqi.json2arkts</id>
+    <name>JSON to ArkTS</name>
+    <vendor email="352761120@qq.com" url="https://github.com/zzpsuper">程序员佩奇</vendor>
+
+    <description><![CDATA[
+    DevEco Studio ArkTS Code Generator Plugin.<br>
+    Features:<br>
+    1. Select JSON -> Right Click -> Generate ArkTS Class/Interface<br>
+    2. Select ArkTS Interface -> Right Click -> Convert to Class<br>
+    3. Select ArkTS Interface -> Right Click -> Generate Mock Data<br>
+    <br>
+    DevEco Studio 代码生成插件。<br>
+    功能：<br>
+    1. 选中 JSON 数据 -> 右键 -> 生成 ArkTS Class/Interface<br>
+    2. 选中 ArkTS Interface -> 右键 -> 转为 Class<br>
+    3. 选中 ArkTS Interface -> 右键 -> 生成测试数据<br>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+    </extensions>
+
+    <actions>
+        <group id="JsonToArktsGroup" text="ArkTS Helper" popup="true">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            
+            <action id="com.example.json2arkts.JsonToArktsAction" 
+                    class="com.example.json2arkts.JsonToArktsAction" 
+                    text="JSON to ArkTS" 
+                    description="Generates ArkTS class/interface from JSON">
+            </action>
+            
+            <action id="com.example.json2arkts.InterfaceToClassAction"
+                    class="com.example.json2arkts.InterfaceToClassAction"
+                    text="Interface to Class"
+                    description="Converts selected Interface to Class">
+            </action>
+
+            <action id="com.example.json2arkts.InterfaceToMockAction"
+                    class="com.example.json2arkts.InterfaceToMockAction"
+                    text="Generate Mock Data"
+                    description="Generates mock data from selected Interface">
+            </action>
+        </group>
+    </actions>
+</idea-plugin>
