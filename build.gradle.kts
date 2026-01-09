@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.example"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     maven { url = uri("https://maven.aliyun.com/repository/public") }
@@ -18,7 +18,7 @@ dependencies {
 
 // Configure Gradle IntelliJ Plugin
 intellij {
-    version.set("2023.1") // Target IDE version
+    version.set("2022.3") // Lower target version for better compatibility
     type.set("IC") // Target IDE type - IntelliJ Community
     
     // 如果需要特定的插件依赖，可以在这里添加
@@ -32,8 +32,8 @@ tasks {
     }
 
     patchPluginXml {
-        sinceBuild.set("231")
-        untilBuild.set("251.*")
+        sinceBuild.set("223")
+        untilBuild.set(provider { null })
     }
 
     signPlugin {
